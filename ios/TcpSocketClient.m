@@ -234,7 +234,7 @@ NSString *const RCTTCPErrorDomain = @"RCTTCPErrorDomain";
 
     _sendTag++;
 
-    [_tcpSocket readDataToData:[GCDAsyncSocket ZeroData] withTimeout:-1 tag:_id.longValue];
+    [_tcpSocket readDataToData:[GCDAsyncSocket CRData] withTimeout:-1 tag:_id.longValue];
 //    [_tcpSocket readDataWithTimeout:-1 tag:_id.longValue];
 }
 
@@ -257,7 +257,7 @@ NSString *const RCTTCPErrorDomain = @"RCTTCPErrorDomain";
     [_clientDelegate onData:@(tag) data:data];
 
 //    [sock readDataWithTimeout:-1 tag:tag];
-    [sock readDataToData:[GCDAsyncSocket ZeroData] withTimeout:-1 tag:tag];
+    [sock readDataToData:[GCDAsyncSocket CRData] withTimeout:-1 tag:tag];
 }
 
 - (void)socket:(GCDAsyncSocket *)sock didAcceptNewSocket:(GCDAsyncSocket *)newSocket

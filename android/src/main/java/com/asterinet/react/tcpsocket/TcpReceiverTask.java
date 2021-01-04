@@ -42,7 +42,7 @@ class TcpReceiverTask extends AsyncTask<Pair<TcpSocketClient, TcpReceiverTask.On
             while (!isCancelled() && !socket.isClosed()) {
                 ByteArrayOutputStream byteArrayBuffer = new ByteArrayOutputStream();
                 while ((l_intByte = in.read() )!= -1) {
-                    if (l_intByte == 0) {
+                    if (l_intByte == 13) {
                         break;
                     }
                     byteArrayBuffer.write(l_intByte);
